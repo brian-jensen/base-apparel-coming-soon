@@ -8,7 +8,10 @@
   padding: 0;
 }
 
-input, select, textarea, button {
+input,
+select,
+textarea,
+button {
   border: none;
   box-shadow: none;
   outline: none;
@@ -25,7 +28,8 @@ a:active {
   color: inherit;
 }
 
-ul, ol {
+ul,
+ol {
   list-style: none;
 }
 
@@ -38,4 +42,161 @@ body {
   justify-content: center;
   align-items: center;
   min-height: 100vh;
+}
+
+.card {
+  max-width: 375px;
+  height: 800px;
+  background: linear-gradient(150.03deg, hsl(0, 0%, 100%) 0%, hsl(0, 100%, 97.8%) 84.51%);
+}
+
+header {
+  height: 84px;
+  padding: 32px;
+}
+
+.logo {
+  width: 100px;
+  height: 21px;
+}
+
+.content {
+  padding: 54px 32px 0;
+  text-align: center;
+}
+
+.content h1 {
+  margin-top: 0;
+  margin-bottom: 16px;
+  text-transform: uppercase;
+  font-weight: 300;
+  font-size: 40px;
+  line-height: 42px;
+  letter-spacing: 10.8254px;
+  color: hsl(0, 35.5%, 70.2%);
+}
+
+.content h1 span {
+  font-weight: 600;
+  color: hsl(0, 6.5%, 24.3%);
+}
+
+.content p {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 22px;
+  color: hsl(0, 35.5%, 70.2%);
+}
+
+form {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  margin-top: 32px;
+  height: 48px;
+  width: 100%;
+  border: 1px solid hsla(0, 35.5%, 70.2%, 0.5);
+  border-radius: 28px;
+}
+
+input {
+  background: transparent;
+  padding: 11px 24px 9px;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 28px;
+  color: #423A3A;
+  caret-color: #423A3A;
+
+}
+
+button {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: -1px;
+  right: -1px;
+  height: 48px;
+  width: 64px;
+  border-radius: 28px;
+  cursor: pointer;
+  background: linear-gradient(135deg, #F8BFBF 0%, #EE8B8B 100%);
+  box-shadow: 0px 15px 20px rgba(198, 110, 110, 0.247569);
+}
+
+input::placeholder {
+  color: #CE9898;
+}
+
+@media (min-width: 90em) {
+  .card {
+    max-width: 90rem;
+    display: grid;
+    grid-template-rows: 150px 1fr;
+    grid-template-areas: 
+      "header background"
+      "content background";
+    background: url(../images/bg-pattern-desktop.svg) bottom left/contain no-repeat, linear-gradient(150.03deg, hsl(0, 0%, 100%) 0%, hsl(0, 100%, 97.8%) 84.51%) no-repeat top left/830px 800px;
+  }
+
+  header {
+    grid-area: header;
+    padding: 75px 165px;
+  }
+
+  .logo {
+    width: 158px;
+    height: 33px;
+  }
+
+  .background {
+    grid-area: background;
+    height: 800px;
+    width: 610px;
+    background: url(../images/hero-desktop.jpg) no-repeat center center/cover;
+  }
+
+  .background img {
+    display: none;
+  }
+
+  .content {
+    grid-area: content;
+    margin-top: 91px;
+    padding: 0 220px 0 165px;
+    text-align: left;
+  }
+
+  .content h1 {
+    margin-bottom: 32px;
+    font-size: 64px;
+    line-height: 64px;
+    letter-spacing: 17.3206px;
+  }
+
+  .content h1 span {
+    line-height: 71px;
+  }
+
+  .content p {
+    font-size: 16px;
+    line-height: 28px;
+  }
+
+  form {
+    height: 56px;
+    margin-top: 40px;
+  }
+
+  input  {
+    padding: 15px 32px 13px;
+    font-size: 16px;
+    line-height: 28px;
+  }
+
+  button {
+    width: 100px;
+    height: 56px;
+  }
 }
