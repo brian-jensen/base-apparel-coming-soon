@@ -1,5 +1,7 @@
 :root {
   --font-primary: 'Josefin Sans', sans-serif;
+  --color-primary: hsl(0, 35.5%, 70.2%);
+  --color-secondary: hsl(0, 6.5%, 24.3%);
 }
 
 * {
@@ -45,14 +47,14 @@ body {
 }
 
 .card {
-  max-width: 375px;
-  height: 800px;
+  max-width: 23.4375rem;
+  height: 50rem;
   background: linear-gradient(150.03deg, hsl(0, 0%, 100%) 0%, hsl(0, 100%, 97.8%) 84.51%);
 }
 
 header {
-  height: 84px;
-  padding: 32px;
+  height: 5.25rem;
+  padding: 2rem;
 }
 
 .logo {
@@ -70,22 +72,22 @@ header {
   margin-bottom: 16px;
   text-transform: uppercase;
   font-weight: 300;
-  font-size: 40px;
-  line-height: 42px;
-  letter-spacing: 10.8254px;
-  color: hsl(0, 35.5%, 70.2%);
+  font-size: 2.5rem;
+  line-height: 2.625rem;
+  letter-spacing: 0.6766rem;
+  color: var(--color-primary);
 }
 
 .content h1 span {
   font-weight: 600;
-  color: hsl(0, 6.5%, 24.3%);
+  color: var(--color-secondary);
 }
 
 .content p {
   font-weight: 400;
-  font-size: 14px;
-  line-height: 22px;
-  color: hsl(0, 35.5%, 70.2%);
+  font-size: 0.875rem;
+  line-height: 1.375rem;
+  color: var(--color-primary);
 }
 
 form {
@@ -93,21 +95,40 @@ form {
   justify-content: space-between;
   position: relative;
   margin-top: 32px;
-  height: 48px;
+  height: 3rem;
   width: 100%;
+  outline: 1px solid transparent;
   border: 1px solid hsla(0, 35.5%, 70.2%, 0.5);
   border-radius: 28px;
+}
+
+form.error::after {
+  background: url(../images/icon-error.svg) no-repeat;
+  content: '';
+  width: 1.5rem;
+  height: 1.5rem;
+  position: absolute;
+  top: 0.625rem;
+  right: 4.5rem;
+}
+
+form.error {
+  border: 2px solid hsl(0, 92.5%, 68.4%);
+}
+
+form.error button {
+  top: -0.125rem;
+  right: -0.25rem;
 }
 
 input {
   background: transparent;
   padding: 11px 24px 9px;
   font-weight: 400;
-  font-size: 14px;
-  line-height: 28px;
-  color: #423A3A;
-  caret-color: #423A3A;
-
+  font-size: 0.875rem;
+  line-height: 1.75rem;
+  color: var(--color-secondary);
+  caret-color: var(--color-secondary);
 }
 
 button {
@@ -115,18 +136,35 @@ button {
   display: flex;
   align-items: center;
   justify-content: center;
-  top: -1px;
-  right: -1px;
-  height: 48px;
-  width: 64px;
+  top: -0.0625rem;
+  right: -0.0625rem;
+  height: 3rem;
+  width: 4rem;
   border-radius: 28px;
   cursor: pointer;
-  background: linear-gradient(135deg, #F8BFBF 0%, #EE8B8B 100%);
+  background-image: linear-gradient(135deg, hsl(0, 80.3%, 86.1%) 0%, hsl(0, 74.4%, 73.9%) 100%);
   box-shadow: 0px 15px 20px rgba(198, 110, 110, 0.247569);
 }
 
+@media (hover: hover) {
+  button:hover {
+    background-image: linear-gradient(135deg, hsl(0, 75.6%, 92%) 0%, hsl(0, 46.5%, 83.1%) 100%);
+  }
+}
+
 input::placeholder {
-  color: #CE9898;
+  color: var(--color-primary);
+}
+
+.content p.error-msg {
+  display: none;
+  font-weight: 400;
+  font-size: 0.8125rem;
+  line-height: 0.8125rem;
+  padding-left: 26px;
+  padding-top: 8px;
+  color: hsl(0, 92.5%, 68.4%);
+  text-align: left;
 }
 
 @media (min-width: 90em) {
@@ -134,7 +172,7 @@ input::placeholder {
     max-width: 90rem;
     display: grid;
     grid-template-rows: 150px 1fr;
-    grid-template-areas: 
+    grid-template-areas:
       "header background"
       "content background";
     background: url(../images/bg-pattern-desktop.svg) bottom left/contain no-repeat, linear-gradient(150.03deg, hsl(0, 0%, 100%) 0%, hsl(0, 100%, 97.8%) 84.51%) no-repeat top left/830px 800px;
@@ -170,9 +208,9 @@ input::placeholder {
 
   .content h1 {
     margin-bottom: 32px;
-    font-size: 64px;
-    line-height: 64px;
-    letter-spacing: 17.3206px;
+    font-size: 4rem;
+    line-height: 4rem;
+    letter-spacing: 1.0825rem;
   }
 
   .content h1 span {
@@ -189,14 +227,25 @@ input::placeholder {
     margin-top: 40px;
   }
 
-  input  {
+  input {
     padding: 15px 32px 13px;
-    font-size: 16px;
-    line-height: 28px;
+    font-size: 1rem;
+    line-height: 1.75rem;
   }
 
   button {
-    width: 100px;
-    height: 56px;
+    width: 6.25rem;
+    height: 3.5rem;
+  }
+
+  form.error::after {
+    top: 0.875rem;
+    right: 7rem;
+  }
+
+  .content p.error-msg {
+    line-height: 1.75rem;
+    padding-top: 4px;
+    padding-left: 34px;
   }
 }
